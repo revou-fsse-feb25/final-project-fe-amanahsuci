@@ -1,30 +1,27 @@
-import Avengers_poster from '../images/Avengers_poster.jpg';
-import Ballerina_poster from '../images/Ballerina_poster.jpg';
-import Conjuring_poster from '../images/Conjuring_poster.jpg';
-import Drifting_Home_Poster from '../images/Drifting_Home_Poster.jpg';
-import John_wick_poster from '../images/John_wick_poster.jpg';
-import Lima_cm_poster from '../images/Lima_cm_poster.jpg';
-import Mufasa_poster from '../images/Mufasa_poster.jpg';
-import Paranormal_activity_poster from '../images/Paranormal_activity_poster.jpg';
-import Pengabdi_Setan_poster from '../images/Pengabdi_Setan_poster.jpg';
-import Spy_x_Family_poster from '../images/Spy_x_Family_poster.jpg';
-import Stampede_poster from '../images/Stampede_poster.jpg';
-import Terrifier_poster from '../images/Terrifier_poster.jpg';
+import { MovieAsset, MovieAssets } from '@/types'
+import Avengers_poster from '@/assets/images/NowShowing/Avengers_poster.jpg'
+import Ballerina_poster from '@/assets/images/NowShowing/Ballerina_poster.jpg';
+import Conjuring_poster from '@/assets/images/NowShowing/Conjuring_poster.jpg';
+import Drifting_Home_Poster from '@/assets/images/NowShowing/Drifting_Home_Poster.jpg';
+import John_wick_poster from '@/assets/images/NowShowing/John_wick_poster.jpg';
+import Lima_cm_poster from '@/assets/images/NowShowing/Lima_cm_poster.jpg';
+import Mufasa_poster from '@/assets/images/NowShowing/Mufasa_poster.jpg';
+import Paranormal_activity_poster from '@/assets/images/NowShowing/Paranormal_activity_poster.jpg';
+import Pengabdi_Setan_poster from '@/assets/images/NowShowing/Pengabdi_Setan_poster.jpg';
+import Spy_X_Family_poster from '@/assets/images/NowShowing/Spy_X_Family_poster.png';
+import Stampede_poster from '@/assets/images/NowShowing/Stampede_poster.jpg';
+import Terrifier_poster from '@/assets/images/NowShowing/Terrifier_poster.jpg';
+import Avatar_cs from '@/assets/images/ComingSoon/Avatar_cs.jpg';
+import KimetsuNoYaiba_poster from '@/assets/images/ComingSoon/KimetsuNoYaiba_poster.png';
+import Exorcism_poster from '@/assets/images/ComingSoon/Exorcism_poster.jpg';
+import Materialists_poster from '@/assets/images/ComingSoon/Materialists_poster.jpg';
+import Now_You_See_Me_cs from '@/assets/images/ComingSoon/Now_You_See_Me_cs.jpeg';
+import Pamali_poster from '@/assets/images/ComingSoon/Pamali_poster.jpg';
+import TheLife_poster from '@/assets/images/ComingSoon/TheLife_poster.jpg';
+import Wakanda_poster from '@/assets/images/ComingSoon/Wakanda_poster.jpg';
+import Wicked_2_cs from '@/assets/images/ComingSoon/Wicked_2_cs.jpg';
 
-export interface MovieAsset {
-    id: string;
-    title: string;
-    poster: any; // Using 'any' to accommodate different image formats
-    genre: string[];
-    duration: number;
-    rating: string;
-}
-
-export interface MovieAssets {
-    [key: string]: MovieAsset;
-}
-
-export const movieAssets: MovieAssets = {
+export const nowShowingMovies: MovieAssets = {
     avengers: {
         id: 'avengers',
         title: 'Avengers: Endgame',
@@ -100,7 +97,7 @@ export const movieAssets: MovieAssets = {
     spyFamily: {
         id: 'spy_x_family',
         title: 'Spy X Family Code: White',
-        poster: Spy_x_Family_poster,
+        poster: Spy_X_Family_poster,
         genre: ['Action', 'Animation', 'Comedy'],
         duration: 110,
         rating: '11+'
@@ -124,20 +121,20 @@ export const movieAssets: MovieAssets = {
 }
 
 export const getMovieById = (id: string): MovieAsset | undefined => {
-    return Object.values(movieAssets).find(movie => movie.id === id);
+    return Object.values(nowShowingMovies).find(movie => movie.id === id);
 } 
 
 export const getMoviesByGenre = (genre: string): MovieAsset[] => {
-    return Object.values(movieAssets).filter(movie => 
+    return Object.values(nowShowingMovies).filter(movie => 
         movie.genre.some(g => g.toLowerCase() === genre.toLowerCase())
     )
 }
 
 export const getAllMovies = (): MovieAsset[] => {
-    return Object.values(movieAssets);
+    return Object.values(nowShowingMovies);
 }
 
-export const moviePosters = {
+export const nowShowingPosters = {
     Avengers_poster,
     Ballerina_poster,
     Conjuring_poster,
@@ -147,8 +144,78 @@ export const moviePosters = {
     Mufasa_poster,
     Paranormal_activity_poster,
     Pengabdi_Setan_poster,
-    Spy_x_Family_poster,
+    Spy_X_Family_poster,
     Stampede_poster,
     Terrifier_poster
 } 
 
+export const comingSoonMovies: MovieAssets = {
+    avatarCs: {
+        id: 'avatar',
+        title: 'Avatar 3',
+        poster: Avatar_cs,
+        genre: ['Adventure', 'Animation']
+    },
+    exorcism: {
+        id: 'exorcism',
+        title: 'Exorcism',
+        poster: Exorcism_poster,
+        genre: ['Horror', 'Thriller']
+    },
+    demonSlayer: {
+        id: 'demon_slayer',
+        title: 'Kimetsu no Yaiba',
+        poster: KimetsuNoYaiba_poster,
+        genre: ['Animation', 'Fiction']
+    },
+    materialists: {
+        id: 'materialists',
+        title: 'Materialists',
+        poster: Materialists_poster,
+        genre: ['Drama', 'Romance']
+    },
+    nowYouSeeMe: {
+        id: 'now_you_see_me',
+        title: 'Now You See Me 3',
+        poster: Now_You_See_Me_cs,
+        genre: ['Drama']
+    },
+    pamali: {
+        id: 'pamali',
+        title: 'Pamali',
+        poster: Pamali_poster,
+        genre: ['Horror', 'Thriller']
+    },
+    theLife: {
+        id: 'the life', 
+        title: 'The Life of Chuck',
+        poster: TheLife_poster,
+        genre: ['Adventure', 'Drama']
+    },
+    wakanda: {
+        id: 'wakanda',
+        title: 'Wakanda',
+        poster: Wakanda_poster,
+        genre: ['Animation']
+    },
+    wicked_2: {
+        id: 'wicked_2',
+        title: 'Wicked 2',
+        poster: Wicked_2_cs,
+        genre: ['Drama', 'Musical']
+    }
+}
+
+export const getComingSoonMovieById = (id: string): MovieAsset | undefined => {
+    return Object.values(comingSoonMovies).find(movie => movie.id === id);
+} 
+
+export const getComingSoonMoviesByGenre = (genre: string): MovieAsset[] => {
+    return Object.values(comingSoonMovies).filter(movie => 
+        movie.genre.some(g => g.toLowerCase() === genre.toLowerCase())
+    )
+}
+
+export const getComingSoonAllMovies = (): MovieAsset[] => {
+    return Object.values(comingSoonMovies);
+}

@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 import { ThemeToggleButton } from '../theme/ThemeToggleButton';
 
 const Navbar: React.FC = () => {
@@ -14,9 +15,15 @@ const Navbar: React.FC = () => {
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0">
                         <Link href="/" className="flex items-center">
-                            <span className="text-2xl font-bold text-gray-300 hover:text-slate-500 transition-colors duration-200">
+                            <Image 
+                                src="/logo/logo.png"
+                                alt="Logo"
+                                width={200}
+                                height={200}
+                            />
+                            {/* <span className="text-2xl font-bold text-gray-300 hover:text-slate-500 transition-colors duration-200">
                                 TICS Cinema
-                            </span>
+                            </span> */}
                         </Link>
                     </div>
 

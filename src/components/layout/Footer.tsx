@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
     MapPin, 
     Phone, 
@@ -19,9 +20,15 @@ const Footer: React.FC = () => {
         <footer>
             <div className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="space-y-4">
+                    <div className="space-y-1">
                         <div>
-                            <h2 className="text-3xl font-bold text-red-500 mb-2">TICS Cinema</h2>
+                            <Image
+                                src="/logo/logo.png"
+                                alt="TICS Cinema Logo"
+                                width={200}
+                                height={200}
+                            />
+                            {/* <h2 className="text-3xl font-bold text-red-500 mb-2">TICS Cinema</h2> */}
                             <p className="text-gray-400 text-sm font-semibold">
                                 Best Hangout Way for Movie Lovers
                             </p>

@@ -51,7 +51,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
                 <div className="absolute inset-0 bg-black/30 bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Link
                         href={`/booking/${movie.id}`}
-                        className="bg-black/60 text-white text-sm font-semibold px-4 py-2 hover:bg-stone-200 hover:text-stone-800 transition"
+                        className="bg-black/60 text-stone-300 text-sm font-semibold px-4 py-2 hover:bg-stone-200 hover:text-stone-800 transition"
                     >
                         Get Ticket
                     </Link>

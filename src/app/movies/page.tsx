@@ -7,6 +7,7 @@ import JoinSection from '@/components/section/JoinSection';
 import ComingSoonSlider from '@/components/movies/ComingSoonSlider';
 import { comingSoonMovies } from '@/assets/movies';
 import Footer from '@/components/layout/Footer';
+import BackButton from '@/components/button/BackButton';
 
 export default function MoviesPage() {
     const movies = getAllMovies();
@@ -22,6 +23,7 @@ export default function MoviesPage() {
         <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-1 p-4">
+                <BackButton />
                 <MovieSlider movies={movies} onBookTicket={handleBookTicket} />
                 <JoinSection />
                 <ComingSoonSlider movies={Object.values(comingSoonMovies)} />

@@ -22,7 +22,7 @@ export default function RegisterPage() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-black">
             <div className="bg-zinc-900 p-8 rounded-lg w-full max-w-md">
-                <h1 className="text-2xl font-semibold text-white mb-2">Register</h1>
+                <h1 className="text-2xl font-semibold text-white mb-2">Sign Up</h1>
 
                 <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                     <div>
